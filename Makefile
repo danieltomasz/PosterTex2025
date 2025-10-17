@@ -54,3 +54,18 @@ install-deps:
 	tlmgr install xcharter
 	tlmgr install xfrac
 	echo "All packages installed successfully!"
+
+# Generate LLM prompt from .tex files
+llm-prompt:
+	@echo "Generating LLM prompt from .tex files..."
+	@if command -v files-to-prompt >/dev/null 2>&1; then \
+		files-to-prompt . -e .tex > llm-context.txt; \
+		echo "✓ Prompt saved to llm-prompt.txt"; \
+		echo "  Total lines: $$(wc -l < llm-prompt.txt)"; \
+		echo "  Total chars: $$(wc -c < llm-prompt.txt)"; \
+	else \
+		echo "✗ files-to-prompt not found. Install with:"; \
+		echo "  npm install -g files-to-prompt"; \
+		echo "  or use: npx files-to-prompt --include '*.tex'"; \
+		exit 1; \
+	fi

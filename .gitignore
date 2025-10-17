@@ -119,3 +119,6 @@ desktop.ini
 .vscode/
 .idea/
 *.iml
+
+## LLM-prompt file
+llm-prompt.txt

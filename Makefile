@@ -33,3 +33,24 @@ distclean: clean
 	echo "Removing final outputs…"
 	latexmk -C -jobname=$(JOBNAME) >/dev/null 2>&1 || true
 	rm -f $(JOBNAME).pdf $(JOBNAME).dvi $(JOBNAME).ps
+
+# Install required LaTeX packages
+install-deps:
+	echo "Installing required LaTeX packages..."
+	tlmgr install tex-gyre
+	tlmgr install import
+	tlmgr install lgreek
+	tlmgr install cbfonts-fd
+	tlmgr install babel-greek
+	tlmgr install textgreek
+	tlmgr install textpos
+	tlmgr install beamerposter
+	tlmgr install type1cm
+	tlmgr install blindtext
+	tlmgr install relsize
+	tlmgr install fira
+	tlmgr install ncctools
+	tlmgr install mathdesign
+	tlmgr install xcharter
+	tlmgr install xfrac
+	echo "All packages installed successfully!"

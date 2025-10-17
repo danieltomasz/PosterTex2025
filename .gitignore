@@ -1,0 +1,121 @@
+*.DS_Store
+out/
+*.bbl
+*.blg
+Template_Poster.tex
+# ----------------------------
+# LaTeX intermediate files
+# ----------------------------
+*.aux
+*.auxlock
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex
+*.synctex.gz
+*.synctex(busy)
+*.pdfsync
+*.xdv
+
+# ----------------------------
+# BibTeX / Biber
+# ----------------------------
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+
+# ----------------------------
+# Beamer
+# ----------------------------
+*.nav
+*.snm
+*.vrb
+
+# ----------------------------
+# Index / Glossaries / Acronyms
+# ----------------------------
+*.idx
+*.ind
+*.ilg
+*.ist
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+
+# ----------------------------
+# Listings / Other aux
+# ----------------------------
+*.lol
+*.thm
+
+# ----------------------------
+# TikZ & externalization
+# (externalized figures + helper hashes)
+# ----------------------------
+*-figure*.pdf
+*-figure*.png
+*-figure*.jpg
+*.dpth
+*.md5
+
+# ----------------------------
+# minted (Pygments)
+# ----------------------------
+_minted*/
+*.pyg
+
+# ----------------------------
+# latexindent backups
+# ----------------------------
+*.bak
+*-bak*
+*.backup
+
+# ----------------------------
+# Outputs you usually don't track
+# (keep PDFs by default; comment out if you want to ignore)
+# ----------------------------
+*.dvi
+*.ps
+# *.pdf   # <- uncomment to ignore generated PDFs
+
+# ----------------------------
+# Common build folders
+# ----------------------------
+build/
+out/
+output/
+aux/
+auxil/
+tmp/
+temp/
+texmf/
+dist/
+
+# ----------------------------
+# TeX editors / tools
+# ----------------------------
+.texpadtmp/
+*.texshop
+
+# ----------------------------
+# OS / Editor cruft
+# ----------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+*.iml

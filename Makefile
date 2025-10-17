@@ -1,11 +1,12 @@
 # Makefile — LaTeX build + cleanup
 
-JOBNAME ?= baps2025
+JOBNAME ?= baps2025_improved
+LATEXMK := $(shell command -v latexmk 2>/dev/null || echo "$(HOME)/Library/TinyTeX/bin/universal-darwin/latexmk")
 
 .PHONY: all clean distclean
 .SILENT:
 
-all: $(JOBNAME).pdf
+all: $(JOBNAME).pdf clean
 
 $(JOBNAME).pdf: $(JOBNAME).tex
 	latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error \
@@ -14,7 +15,7 @@ $(JOBNAME).pdf: $(JOBNAME).tex
 # Remove auxiliary junk but keep PDFs
 clean:
 	echo "Cleaning LaTeX auxiliary files…"
-	latexmk -c -jobname=$(JOBNAME) >/dev/null 2>&1 || true
+	LATEXMK -c -jobname=$(JOBNAME) >/dev/null 2>&1 || true
 	find . -type f \( \
 		-name '*.aux'    -o -name '*.log'    -o -name '*.out'    -o -name '*.toc'    -o \
 		-name '*.lof'    -o -name '*.lot'    -o -name '*.fls'    -o -name '*.fdb_latexmk' -o \
@@ -31,7 +32,7 @@ clean:
 # Also remove generated PDFs and DVI/PS
 distclean: clean
 	echo "Removing final outputs…"
-	latexmk -C -jobname=$(JOBNAME) >/dev/null 2>&1 || true
+	LATEXMK -C -jobname=$(JOBNAME) >/dev/null 2>&1 || true
 	rm -f $(JOBNAME).pdf $(JOBNAME).dvi $(JOBNAME).ps
 
 # Install required LaTeX packages
@@ -48,11 +49,11 @@ install-deps:
 	tlmgr install type1cm
 	tlmgr install blindtext
 	tlmgr install relsize
-	tlmgr install fira
+	tlmgr install fira cbfonts
 	tlmgr install ncctools
 	tlmgr install mathdesign
 	tlmgr install xcharter
-	tlmgr install xfrac
+	tlmgr install xfrac 
 	echo "All packages installed successfully!"
 
 # Generate LLM prompt from .tex files

@@ -325,47 +325,97 @@
 
 
 
-\begin{textblock*}{\colwidth}(\leftmargin+2\colwidth+2\colsep, \blockTwo+320pt)
-	\begin{block}{Data }
-		\vspace{-0.333333\baselineskip}
+% \begin{textblock*}{\colwidth}(\leftmargin+2\colwidth+2\colsep, \blockTwo+320pt)
+% 	% \begin{block}{Data }
+% 	% 	\vspace{-0.333333\baselineskip}
 	
-		\begin{itemize}
-			\item We re-analysed MEG data from  n=15 healthy participants, stimulated with a sound wave modulated at 40 Hz, presented in 180 trials for one second, with the onset of two consecutive trials separated by at least 2 s \citep{pellegrino2019}.
+% 	% 	\begin{itemize}
+% 	% 		\item We re-analysed MEG data from  n=15 healthy participants, stimulated with a sound wave modulated at 40 Hz, presented in 180 trials for one second, with the onset of two consecutive trials separated by at least 2 s \citep{pellegrino2019}.
 	
- 			\item The data were preprocessed, projected into Destrieux brain atlas 
+%  	% 		\item The data were preprocessed, projected into Destrieux brain atlas 
 
    
-		\end{itemize}
-		\end{block}
+% 	% 	\end{itemize}
+% 	% 	\end{block}
+% \begin{block}{Data}
+%     \vspace{-0.333333\baselineskip}
+%     \begin{itemize}
+%         \item \textbf{Reanalysis of MEG data} from n=15 healthy participants \citep{pellegrino2019}
+%         \item \textbf{Paradigm:} 180 trials of 40-Hz amplitude-modulated auditory stimulation (1s duration, $\geq$2s inter-trial interval)
+%         \item \textbf{Preprocessing:} Source reconstruction to 148 cortical regions (Destrieux atlas)
+%     \end{itemize}
+% \end{block}
 
-\end{textblock*}
+% \end{textblock*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  COLUMN 1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{textblock*}{\colwidth}(\leftmargin, \blockThree-150pt)
 
-	\begin{block}{Methods }
-		\vspace{-0.333333\baselineskip}
-		\begin{itemize}
-       \item 	The PSD  of the spectrum were  computed for 1s second pre-stimulus period and stimulation period for each trial (and averaged later) and for each region. The slope and exponent were computed  using specparam toolbox \citep{donoghue2020a}.
+% 	\begin{block}{Methods }
+% 		\vspace{-0.333333\baselineskip}
+% 		\begin{itemize}
+%        \item 	The PSD  of the spectrum were  computed for 1s second pre-stimulus period and stimulation period for each trial (and averaged later) and for each region. The slope and exponent were computed  using specparam toolbox \citep{donoghue2020a}.
 
-			\item ITPC was computed, the value averaged in the intervals $[-500,-200]$ ms for prestimuli and  $[400, 700]$ ms after sound onset for each of the regions using the wavelet approach described in \citep{pellegrino2019}.
-   \item The influence of the stimulus and the exponent on the ITPC were tested by modelling the different relationships with an integrative Bayesian Multilevel Model \citep{chen2019a} 
-   \item This methods allows for better integration of the spatial information and control of multiplicity avoding information loss of univariate approach followed by the correction for multiple testing.
- \item Effect estimation and region-level inferences  are based on posterior distributions of group differences. 
-		\end{itemize}
+% 			\item ITPC was computed, the value averaged in the intervals $[-500,-200]$ ms for prestimuli and  $[400, 700]$ ms after sound onset for each of the regions using the wavelet approach described in \citep{pellegrino2019}.
+%    \item The influence of the stimulus and the exponent on the ITPC were tested by modelling the different relationships with an integrative Bayesian Multilevel Model \citep{chen2019a} 
+%    \item This methods allows for better integration of the spatial information and control of multiplicity avoding information loss of univariate approach followed by the correction for multiple testing.
+%  \item Effect estimation and region-level inferences  are based on posterior distributions of group differences. 
+% 		\end{itemize}
 
-		Following models were tested:
-		\begin{itemize}
-			\item[\mynum{1}] ITPC $\thicksim$ S (Stimulus)
-			\item[\mynum{2}] ITPC $\thicksim$ Exponent + Stimulus
-			\item[\mynum{3}] Exponent $\thicksim$  Stimulus
-			\item[\mynum{5}] Offset $\thicksim$ Stimulus
-\item  For investigation of the the relationship we fit the model 
-$${\small \text{ITPC}_{\text{stim}} \sim 1 + \text{exponent}_z + (1 + \text{exponent}_z \mid \text{subject}) + (1 \mid \text{ROI})}$$ 
-with z-scored Exponent. The model was fitted using the \texttt{brms} package and \citep{chen2019a}.
-		\end{itemize}
+% 		Following models were tested:
+% 		\begin{itemize}
+% 			\item[\mynum{1}] ITPC $\thicksim$ S (Stimulus)
+% 			\item[\mynum{2}] ITPC $\thicksim$ Exponent + Stimulus
+% 			\item[\mynum{3}] Exponent $\thicksim$  Stimulus
+% 			\item[\mynum{5}] Offset $\thicksim$ Stimulus
+% \item  For investigation of the the relationship we fit the model 
+% $${\small \text{ITPC}_{\text{stim}} \sim 1 + \text{exponent}_z + (1 + \text{exponent}_z \mid \text{subject}) + (1 \mid \text{ROI})}$$ 
+% with z-scored Exponent. The model was fitted using the \texttt{brms} package and \citep{chen2019a}.
+% 		\end{itemize}
 
-	\end{block}
+% 	\end{block}
+
+
+
+\begin{block}{ Data and Methods}
+    \vspace{-0.333333\baselineskip}
+
+	\textbf{Data:}
+    \begin{itemize}
+     \item \textbf{n=15 healthy participants;} In block 180 trials of 40-Hz auditory stimulation (1s duration) \citep{pellegrino2019}
+        \item Source-reconstructed MEG data from 148 cortical regions (Destrieux atlas)
+    \end{itemize}
+    
+    \textbf{Spectral Parameterization:}
+    \begin{itemize}
+        \item PSD computed for 1s pre-stimulus and stimulus periods per trial/region
+        \item Exponent and offset extracted using \texttt{specparam} \citep{donoghue2020a} from 3-45 Hz range
+    \end{itemize}
+    
+    \textbf{Phase-Locking Measurement:}
+    \begin{itemize}
+        \item ITPC computed via Morlet wavelets at 40 Hz \citep{pellegrino2019}
+        \item Baseline: $[-500,-200]$ ms; Stimulation: $[400,700]$ ms post-onset
+    \end{itemize}
+    
+    \textbf{Statistical Analysis:}
+    \begin{itemize}
+        \item \textbf{Bayesian multilevel modeling} via Region-Based Analysis (RBA) \citep{chen2019a}, accounts for spatial structure and multiple comparisons through hierarchical pooling
+        \item Posterior distributions quantify effect uncertainty across 148 regions
+    \end{itemize}
+    
+    \textbf{Models tested:}
+    \begin{itemize}
+        \item[\mynum{1}] ITPC $\thicksim$ Stimulus (entrainment effect)
+        \item[\mynum{2}] Exponent $\thicksim$ Stimulus (stability test)
+        \item[\mynum{3}] Offset $\thicksim$ Stimulus
+    \end{itemize}
+    
+    \textbf{Primary model (exponent-ITPC relationship):}
+    $${\small \text{ITPC}_{\text{stim}} \sim 1 + \text{exponent}_z + (1 + \text{exponent}_z \mid \text{subject}) + (1 \mid \text{ROI})}$$
+    where exponent$_z$ is within-subject z-scored. Fitted using \texttt{brms} package.
+\end{block}
+
 \end{textblock*}
 
 
@@ -447,7 +497,7 @@ with z-scored Exponent. The model was fitted using the \texttt{brms} package and
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  COLUMN 1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{textblock*}{\colwidth}(\leftmargin+2\colwidth+2\colsep, \blockThree-160pt)
+\begin{textblock*}{\colwidth}(\leftmargin+2\colwidth+2\colsep, \blockThree -460pt)
 \noindent\rule{\linewidth}{0.5pt}
 
 % \begin{block}{Conclusion}

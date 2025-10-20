@@ -187,7 +187,7 @@
 		 %\end{figure}
 		\begin{itemize}
 
-			\item  Simplified formula  describing 1/f component  of the  PSD  of the signal: $AP(f) = b - log(k + f^{\chi})$;  The exponent ${\chi}$ is related to the negative slope of the power spectrum in log-log space, that is, the inverse relationship between power and frequency;  The offset $b$ describe the uniform shift in power across frequencies
+			\item  Simplified formula  describing 1/f component  of the  PSD  of the signal: $L(f) = b - \log(k + f^\chi)$;  The exponent ${\chi}$ is related to the negative slope of the power spectrum in log-log space, that is, the inverse relationship between power and frequency;  The offset $b$ describe the uniform shift in power across frequencies
 		\item These parameters are most likely governed by waxing and waning of oscillatory components, and can be associated to biological mechanisms (e.g. excitation:inhibition balance as summed by \citep{waschke2021}, cognitive processes, and group differences). 
 		
 			\item  Graphical relationship of spectral power and offset and exponent (from \citep{hill2022})
@@ -384,21 +384,51 @@ with z-scored Exponent. The model was fitted using the \texttt{brms} package and
 
 \begin{textblock*}{\colwidth}(\leftmargin+\colwidth+\colsep, \blockThree-150pt)
 
-	\begin{block}{Results {\mdseries(Box 2)}}
-		\vspace{-0.333333\baselineskip}
-		\begin{itemize}
-			\item Exponent and the offset of the spectrum are different across the brain (Box 1); 
-			\item Strong effect of the stimulus (S) on the ITPC (contrast baseline-stimulus), in areas like the auditory regions, but also in temporal lobe, inferior part of primary sensory-motor regions and inferior frontal regions; negative values indicate higher ITPC during stimulation.
+	% \begin{block}{Results {\mdseries(Box 2)}}
+	% 	\vspace{-0.333333\baselineskip}
+	% 	\begin{itemize}
+	% 		\item Exponent and the offset of the spectrum are different across the brain (Box 1); 
+	% 		\item Strong effect of the stimulus (S) on the ITPC (contrast baseline-stimulus), in areas like the auditory regions, but also in temporal lobe, inferior part of primary sensory-motor regions and inferior frontal regions; negative values indicate higher ITPC during stimulation.
 	
-			\item No particular evidence was found for the model $Exponent \thicksim Stimulus$, namely the stimulation did not influence the exponent per se.
-			\item No significant evidence was found for any of the models involving the Offset either as a predicted variable, and as a predictor, suggesting a marginal role for it in the auditory entrainment.	
-			 \item  Looking for a raw relationship between exponent and ITPC shows a positive relationship between the Exponent and the ITPC, suggesting that higher Exponent is associated with higher ITPC, i.e. higher synchrony during stimulation.
-			\item Hierarchical Bayesian modelling allows to estimate the posterior distribution of the coefficients, which can be used to assess the significance of the effect.  It also uses pooling of the data across subjects and regions. The posterior distribution of the coefficient is shown in the Box 2, on the right.		
+	% 		\item No particular evidence was found for the model $Exponent \thicksim Stimulus$, namely the stimulation did not influence the exponent per se.
+	% 		\item No significant evidence was found for any of the models involving the Offset either as a predicted variable, and as a predictor, suggesting a marginal role for it in the auditory entrainment.	
+	% 		 \item  Looking for a raw relationship between exponent and ITPC shows a positive relationship between the Exponent and the ITPC, suggesting that higher Exponent is associated with higher ITPC, i.e. higher synchrony during stimulation.
+	% 		\item Hierarchical Bayesian modelling allows to estimate the posterior distribution of the coefficients, which can be used to assess the significance of the effect.  It also uses pooling of the data across subjects and regions. The posterior distribution of the coefficient is shown in the Box 2, on the right.		
 	
 			
-		\end{itemize}	
-		\end{block}
+	% 	\end{itemize}	
+	% 	\end{block}
 		
+\begin{block}{Results}
+	\vspace{-0.333333\baselineskip}
+	
+	\textbf{Spatial Distribution \& Stability:}
+	\begin{itemize}
+		\item Exponent and offset varied systematically across brain regions (Box 1)
+		\item Exponent remained stable during auditory stimulation (no evidence for Stimulus effect)
+		\item Offset showed no systematic changes across conditions
+	\end{itemize}
+	
+	\textbf{ITPC Response to Auditory Stimulation:}
+	\begin{itemize}
+		\item Strong stimulus effect on ITPC (baseline vs.\ stimulation) in auditory cortex, temporal lobe, inferior sensorimotor regions, and inferior frontal regions
+		\item Right hemisphere showed somewhat stronger effects
+	\end{itemize}
+	
+	\textbf{Exponent-ITPC Relationship:}
+	\begin{itemize}
+		\item Positive relationship between exponent and ITPC during stimulation 
+		\item Steeper spectral slopes associated with stronger phase-locking
+		\item Regional specificity: Strongest effects in right superior temporal gyrus, temporal pole, insula, and inferior frontal regions---overlapping with regions showing robust ASSR responses
+		\item Offset showed no significant relationship with ITPC
+	\end{itemize}
+	
+	\textbf{Statistical Approach:}
+	\begin{itemize}
+		\item Bayesian multilevel modeling accounts for spatial structure and multiple comparisons through hierarchical pooling
+		\item Posterior distributions and $P^+$ quantify uncertainty in estimates
+	\end{itemize}
+\end{block}
 
 \end{textblock*}
 

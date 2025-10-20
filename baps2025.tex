@@ -43,24 +43,43 @@
 \setlength{\blockThree}{ 75.75cm}
 \setlength{\blockFour} {120.00cm}
 
-\title{\firasemibold The spectral exponent is associated with the synchrony measured via ITPC in gamma ASSRs}
+\title{\firasemibold  The steeper 1/f slope of MEG power spectrum is associated with stronger gamma synchrony, measured via inter-trial phase coherence (ITPC) \\ in the 40-Hz auditory steady-state response}
 
 % (\email{daniel.borek@ugent.be})
+% \author{%
+% 	 Daniel Borek,\inst{1} \and
+% 	 Gang Chen,\inst{2} \and
+% 	Giovanni Pellegrino,\inst{3} \and
+% 	Giorgio Arcara\inst{3} \and
+% 	Daniele Marinazzo\inst{1}
+% } %Author(s)
+
+  
+
+% \institute{%
+% 	\inst{1} Department of Data Analysis, Faculty of Psychology and Educational Sciences, Ghent, Belgium ;
+% 	\and
+% 	\inst{2}\,National~Institutes~of~Health,~Bethesda,~MD;
+% 	\and
+% 	\inst{3}\,IRCCS~San~Camillo~Hospital,~Venice,~Italy%
+% } %Institution(s)
+
+% \newcommand{\affilindicator}[1]{\textsuperscript{#1}}
+
+% Then your original code should work:
 \author{%
 	 Daniel Borek,\affilindicator{a}
 	 Gang Chen,\affilindicator{b} 
 	Giovanni Pellegrino,\affilindicator{c}
 	Giorgio Arcara\affilindicator{c} and
 	Daniele Marinazzo\affilindicator{a}
-} %Author(s)
-
-  
+}
 
 \institute{%
 	\affilindicator{a}\,Department of Data Analysis, Faculty of Psychology and Educational Sciences, Ghent, Belgium ;
 	\affilindicator{b}\,National~Institutes~of~Health,~Bethesda,~MD;
 	\affilindicator{c}\,IRCCS~San~Camillo~Hospital,~Venice,~Italy%
-} %Institution(s)
+}
 
 
 \usepackage{xspace}
@@ -91,7 +110,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  COLUMN 1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \TPshowboxesfalse
 
-\begin{textblock*}{\colwidth}(\leftmargin, \blockOne)
+\begin{textblock*}{\colwidth}(\leftmargin, \blockOne+3cm)  % Add 3cm below original position
 
 \begin{alertblock}{%
 	\begin{minipage}[b]{55pt}
@@ -100,7 +119,7 @@
 	\end{minipage}%
 	\begin{minipage}[b]{0.9\colwidth}
 		Hypothesis.\;
-		{\mdseries 	We hypothesize that a steeper slope of the 1/f aperiodic component (i.e., a larger spectral exponent) in MEG signals is associated with higher auditory steady-state response (ASSR) synchrony, as measured by inter-trial phase coherence (ITPC) during 40 Hz auditory stimulation.
+		{\mdseries 	We  explored whether a steeper slope of the 1/f  PSD component (i.e., a larger spectral exponent) in MEG signals is associated with higher auditory steady-state response (ASSR) synchrony, as measured by inter-trial phase coherence (ITPC) during 40 Hz auditory stimulation.
 		}
 	\end{minipage}%
 }
@@ -186,7 +205,7 @@
 \end{textblock*}
 
 \TPshowboxestrue
-\begin{textblock*}{1.1\colwidth}(\leftmargin+1.9\colwidth+2\colsep,  \blockOne)
+\begin{textblock*}{1.1\colwidth}(\leftmargin+1.9\colwidth+2\colsep,  \blockOne+3cm)
 
 	\begin{alertblock}{%
 		\begin{minipage}[b]{55pt}
@@ -195,7 +214,7 @@
 		\end{minipage}%
 		\begin{minipage}[b]{0.9\linewidth+\colsep-125pt}
 			Spectral Parametrization.\;
-			{\mdseries Mean values \mbox{of} \mbox{estimated} \mbox{parameters} describing the 1/f part \mbox{of}  \mbox{spectral} \mbox{power} across different regions (right hemisphere). }
+			{\mdseries Mean values \mbox{of} \mbox{estimated} \mbox{exponent} and offset describing the 1/f part \mbox{of}  \mbox{spectral} \mbox{power} across different regions (right hemisphere). }
 		\end{minipage}%
 	}
 	\begin{minipage}[t]{.99\linewidth}
@@ -260,7 +279,7 @@
 
 \TPshowboxesfalse
 
-\begin{textblock*}{\colwidth}(\leftmargin+2\colwidth+2\colsep, \blockTwo-200pt)
+\begin{textblock*}{\colwidth}(\leftmargin+2\colwidth+2\colsep, \blockTwo-150pt)
 
 
 % 	\begin{parblock}{Synchronisation}
@@ -306,7 +325,7 @@
 
 
 
-\begin{textblock*}{\colwidth}(\leftmargin+2\colwidth+2\colsep, \blockTwo+300pt)
+\begin{textblock*}{\colwidth}(\leftmargin+2\colwidth+2\colsep, \blockTwo+320pt)
 	\begin{block}{Data }
 		\vspace{-0.333333\baselineskip}
 	
@@ -341,7 +360,9 @@
 			\item[\mynum{2}] ITPC $\thicksim$ Exponent + Stimulus
 			\item[\mynum{3}] Exponent $\thicksim$  Stimulus
 			\item[\mynum{5}] Offset $\thicksim$ Stimulus
-\item  For investigation of the the relationship we fit the model $ITPC:stim~Exponent: stim+(1 +Exponent: stim|ROI+(1+Exponent: stim|Subject)$ with using z-scored Exponent. The model was fitted using the \texttt{brms} package and \citep{chen2019a}.
+\item  For investigation of the the relationship we fit the model 
+$${\small \text{ITPC}_{\text{stim}} \sim 1 + \text{exponent}_z + (1 + \text{exponent}_z \mid \text{subject}) + (1 \mid \text{ROI})}$$ 
+with z-scored Exponent. The model was fitted using the \texttt{brms} package and \citep{chen2019a}.
 		\end{itemize}
 
 	\end{block}

@@ -450,14 +450,38 @@ with z-scored Exponent. The model was fitted using the \texttt{brms} package and
 \begin{textblock*}{\colwidth}(\leftmargin+2\colwidth+2\colsep, \blockThree-160pt)
 \noindent\rule{\linewidth}{0.5pt}
 
+% \begin{block}{Conclusion}
+% \vspace{-0.333333\baselineskip}
+% \begin{itemize}
+% 	\item The differences observed might simply reflect increased "noise" in the time-domain signal, potentially diminishing SNR and synchrony. Alternatively, from a biological perspective, this effect might be linked with excitation-inhibition balance, which influence both synchrony measures and spectral slope.
+% 	\item The effects of the aperiodic slope on the estimation of the instantaneous phase and the ITPC \citep{samaha2022} could be \mbox{considered} in further analysis  as well as a effect of higher gamma power for aperiodic slope  estimation.
+% \end{itemize}	
+% \emph{Acknowledgments:} For visualising the results ggseg \mbox{library} was
+% used \citep{mowinckel2020}
+% \end{block}
+
 \begin{block}{Conclusion}
-\vspace{-0.333333\baselineskip}
-\begin{itemize}
-	\item The differences observed might simply reflect increased "noise" in the time-domain signal, potentially diminishing SNR and synchrony. Alternatively, from a biological perspective, this effect might be linked with excitation-inhibition balance, which influence both synchrony measures and spectral slope.
-	\item The effects of the aperiodic slope on the estimation of the instantaneous phase and the ITPC \citep{samaha2022} could be \mbox{considered} in further analysis  as well as a effect of higher gamma power for aperiodic slope  estimation.
-\end{itemize}	
-\emph{Acknowledgments:} For visualising the results ggseg \mbox{library} was
-used \citep{mowinckel2020}
+	\vspace{-0.333333\baselineskip}
+	
+	\textbf{Main Finding:}
+	\begin{itemize}
+		\item Steeper spectral slopes associated with stronger gamma phase-locking, particularly in auditory and temporal regions showing robust ASSR responses
+	\end{itemize}
+	
+	\textbf{Two Possible Mechanisms:}
+	\begin{itemize}
+		\item \textbf{Biological:} Both measures may reflect E/I balance---stronger inhibitory tone (steeper slope) provides temporal scaffolding for precise synchronization \citep{waschke2021}
+		\item \textbf{Methodological:} Spectral slope influences phase estimation reliability and SNR \citep{vandiepen2018CaveatsObservingInterTrial, samaha2022}
+
+		\item Regional specificity and exponent stability suggest biological contribution, though methodological confounding cannot be fully ruled out
+	\end{itemize}
+	
+	\textbf{Implications:}
+	\begin{itemize}
+		\item Exploratory findings ($n=15$) warrant replication in larger samples
+		\item Combined spectral-oscillatory measures may enhance sensitivity to circuit dysfunction
+		\item Future work should distinguish biological from methodological contributions through controlled simulations and clinical validation
+	\end{itemize}
 \end{block}
 
 \end{textblock*}
